@@ -1,69 +1,43 @@
-# Finanças pessoais no Power BI — Versão 01
+# Finanças pessoais no Excel Online — Versão 01
 
-Projeto em desenvolvimento. A versão 01 combina uma planilha Excel para registrar movimentações e um painel no Power BI para acompanhar despesas e reserva.
+A pasta de trabalho reúne o registro de movimentações e os gráficos. Use a aba **Lançamentos** para preencher os dados e a aba **Painel** para acompanhar suas finanças.
 
-## O que a versão 01 inclui
+## Abrir a demonstração
 
-- Registro de data, tipo, categoria, descrição e valor em reais.
-- Categorias de despesa como Alimentação, Jogos, Entretenimento e Saídas, além de Moradia, Transporte, Saúde e Outros.
-- Gráfico de barras com as despesas por categoria e gráfico de linha com a evolução mensal da reserva.
-- Filtro por mês e indicadores de receitas, despesas, resultado do período e saldo da reserva.
+1. Baixe a [planilha de exemplo](dados/Lancamentos-exemplo.xlsx).
+2. No [Excel Online](https://excel.cloud.microsoft/), entre na sua conta, clique em **Carregar um arquivo** e selecione a planilha.
+3. Abra a aba **Painel**. A célula amarela **Mês do painel** pode ficar vazia para mostrar todos os lançamentos ou receber uma data, como `01/09/2026`, para consultar um mês.
 
-## Como abrir a demonstração
+## Registrar uma movimentação
 
-1. Clone o repositório ou baixe e extraia o ZIP completo. Na pasta `versao-01/`, abra [FinancasPessoais.pbip](FinancasPessoais.pbip) no Power BI Desktop para Windows.
-2. Em **Página Inicial → Transformar dados → Editar parâmetros**, configure `CaminhoPlanilha` com o caminho completo da [planilha de exemplo](dados/Lancamentos-exemplo.xlsx) dentro dessa pasta.
-3. Confirme o parâmetro, clique em **Aplicar alterações** quando a faixa aparecer e depois clique em **Atualizar**.
-4. Use o filtro **Mês** para escolher um período. Segure **Ctrl** para selecionar mais de um mês. Passe o mouse pelas barras ou pela linha para ver os valores exatos.
-
-## Como lançar suas movimentações
-
-Faça uma cópia da planilha de exemplo e apague os valores das linhas de demonstração. Preserve os cabeçalhos e a tabela do Excel chamada `Lancamentos`. Preencha uma movimentação por linha dentro da tabela e confirme que ela se expande ao acrescentar linhas. Digite sempre valores positivos em reais e datas reconhecidas pelo Excel.
+Na aba **Lançamentos**, preencha **Data**, **Tipo**, **Categoria**, **Descrição** e **Valor**. Use um valor positivo em reais e adicione cada movimentação em uma linha da tabela. As listas em **Tipo** e **Categoria** ajudam a padronizar os lançamentos.
 
 | Tipo | Quando usar | Categoria |
 | --- | --- | --- |
-| Despesa | Pagamento de uma compra ou conta | A categoria do gasto |
+| Despesa | Compra ou conta paga | Alimentação, Jogos, Entretenimento, Saídas, Moradia, Transporte, Saúde ou Outros |
 | Receita | Salário ou outra entrada de renda | Renda |
-| Saldo inicial | Valor que você já tinha na reserva na data escolhida para começar | Reserva |
-| Aporte | Dinheiro transferido para a reserva | Reserva |
-| Resgate | Dinheiro retirado da reserva | Reserva |
+| Saldo inicial | Valor que já estava na reserva na data de início | Reserva |
+| Aporte | Transferência para a reserva | Reserva |
+| Resgate | Retirada da reserva | Reserva |
 
-Use **Saldo inicial** uma vez se já houver dinheiro guardado. Se sacar da reserva para pagar uma compra, registre o resgate na categoria **Reserva** e a compra na categoria correspondente.
+Se usar dinheiro da reserva para pagar uma compra, registre duas linhas. Uma para o resgate e outra para a despesa na categoria correspondente.
 
-Para uso pessoal, configure `CaminhoPlanilha` em uma cópia do projeto fora do repositório público. Salve a planilha depois de incluir lançamentos e clique em **Atualizar** no Power BI. Mantenha a planilha pessoal e os arquivos de cache fora do GitHub.
+Para começar com seus próprios dados, crie uma cópia privada, limpe os valores de exemplo e preserve os cabeçalhos e a tabela de lançamentos. Ao alterar os dados, o Excel recalcula o painel automaticamente.
 
-## Como o painel calcula os valores
+## Ler o painel
 
-- **Despesas por categoria** soma apenas lançamentos do tipo Despesa nos meses selecionados.
-- **Resultado do período** é o total de receitas menos o total de despesas da seleção. Aportes e resgates são transferências da reserva e ficam fora desse cálculo.
-- **Reserva acumulada** soma o saldo inicial e os aportes e desconta os resgates até o fim de cada mês. Mesmo com um mês filtrado, o saldo inclui movimentações anteriores a ele.
+- **Despesas por categoria** mostra em uma rosca quanto cada categoria representa no total gasto. Cada categoria tem uma cor na legenda.
+- **Evolução da reserva** mostra o saldo ao fim de cada mês nos 12 meses que terminam no mês escolhido. Com a célula amarela vazia, a linha termina no mês do lançamento mais recente.
+- **Resultado do período** é a diferença entre receitas e despesas. O saldo da reserva soma o saldo inicial e os aportes e desconta os resgates, incluindo os movimentos de meses anteriores.
+- A aba **Resumo** mostra os valores que alimentam os gráficos.
 
-## Como conferir os dados de exemplo
+## Conferir a demonstração
 
-| Indicador | Resultado esperado |
+| Indicador | Valor esperado |
 | --- | ---: |
-| Receitas de julho a outubro de 2026 | R$ 12.800,00 |
-| Despesas de julho a outubro de 2026 | R$ 2.441,00 |
-| Resultado de julho a outubro de 2026 | R$ 10.359,00 |
-| Reserva ao fim de julho | R$ 1.200,00 |
-| Reserva ao fim de agosto | R$ 1.650,00 |
-| Reserva ao fim de setembro | R$ 1.450,00 |
-| Reserva ao fim de outubro | R$ 1.950,00 |
-| Despesas ao filtrar setembro | R$ 320,00 |
-
-As categorias Saúde e Transporte aparecem em setembro. A reserva acumulada continua em R$ 1.450,00, pois o saldo inclui os movimentos de julho e agosto.
-
-## Estrutura do projeto
-
-| Caminho | Conteúdo |
-| --- | --- |
-| `FinancasPessoais.pbip` | Arquivo de abertura do projeto |
-| `FinancasPessoais.Report/` | Página, gráficos e filtros no formato PBIR |
-| `FinancasPessoais.SemanticModel/` | Consulta Power Query, calendário e medidas DAX |
-| `dados/Lancamentos-exemplo.xlsx` | Planilha com dados fictícios para demonstração |
-
-## Histórico
-
-- **Versão 01** — Cadastro de movimentações, categorias, painel de despesas e acompanhamento da reserva.
-
-[Documentação oficial sobre projetos do Power BI Desktop](https://learn.microsoft.com/pt-br/power-bi/developer/projects/projects-overview)
+| Receitas no período completo | R$ 12.800,00 |
+| Despesas no período completo | R$ 2.441,00 |
+| Resultado do período completo | R$ 10.359,00 |
+| Reserva ao fim de outubro de 2026 | R$ 1.950,00 |
+| Despesas ao selecionar setembro de 2026 | R$ 320,00 |
+| Reserva ao selecionar setembro de 2026 | R$ 1.450,00 |

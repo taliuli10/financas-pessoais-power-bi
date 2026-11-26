@@ -1,13 +1,11 @@
-# Finanças pessoais no Power BI
+# Finanças pessoais no Excel Online
 
-Projeto em desenvolvimento para registrar movimentações em Excel e acompanhar despesas e reserva no Power BI.
+Registre movimentações e acompanhe suas despesas e sua reserva em uma única pasta de trabalho do Excel Online.
 
 ## Versões
 
-Cada versão tem sua própria pasta na branch `main`, com os arquivos do Power BI, a planilha de exemplo e as instruções de uso.
-
 | Versão | Conteúdo |
 | --- | --- |
-| [Versão 01](versao-01/) | Lançamentos em Excel, despesas por categoria, evolução mensal da reserva e filtro por mês. |
+| [Versão 01](versao-01/) | Planilha Excel com lançamentos, indicadores, filtro mensal, gráfico de despesas em rosca e evolução da reserva. |
 
-Consulte o [guia da versão 01](versao-01/README.md) para configurar a planilha e abrir o painel.
+O [guia da versão 01](versao-01/README.md) explica como abrir a demonstração e usar a planilha com seus dados. O arquivo público contém apenas dados fictícios.
