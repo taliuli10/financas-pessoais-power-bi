@@ -1,28 +1,36 @@
 # Finanças pessoais no Excel Online — Versão 02
 
-O **Painel** cabe no intervalo **A1:AD35**. À esquerda ficam os lançamentos recentes e os gastos do mês anterior. No centro ficam os indicadores e as despesas por categoria. À direita ficam as tabelas de consulta e a evolução da reserva.
+O **Painel** ocupa **A1:AD35**. À esquerda ficam o registro direto, os lançamentos recentes e os gastos do mês anterior. No centro ficam o filtro, os indicadores e a rosca de despesas. À direita ficam as tabelas e o gráfico da reserva.
 
-## Abrir a demonstração
+## Abrir no Excel Online
 
-1. Baixe a [planilha de exemplo](dados/Lancamentos-exemplo.xlsx).
-2. No [Excel Online](https://excel.cloud.microsoft/), clique em **Carregar um arquivo** e selecione a planilha.
-3. Abra a aba **Painel**. A aba **Lançamentos** contém a tabela de preenchimento, e a aba **Resumo** contém os cálculos dos gráficos.
+Baixe a [planilha de exemplo](dados/Lancamentos-exemplo.xlsx) e use **Carregar um arquivo** no [Excel Online](https://excel.cloud.microsoft/). A pasta de trabalho tem duas abas, **Painel** e **Resumo**.
 
-## Usar o painel
+## Registrar no Painel
 
-- Clique em **Abrir a aba Lançamentos para registrar uma movimentação**. Preencha data, tipo, categoria, descrição e valor positivo em reais. Adicione cada lançamento dentro da tabela.
-- Em **Lançamentos recentes**, altere a célula amarela **Página** para ver blocos de sete registros, a partir dos últimos inseridos.
-- Em **Mês do painel**, indique uma data para filtrar o mês. Deixe a célula vazia para somar todo o período.
-- O gráfico **Gastos do mês passado** usa o mês civil anterior à data atual e não depende do mês selecionado no painel.
-- O gráfico **Evolução da reserva** usa os 12 meses até o mês selecionado ou até o lançamento mais recente. O saldo soma o saldo inicial e os aportes e desconta os resgates.
+1. Em **Registrar despesas**, dê dois cliques em **Data** para abrir o calendário ou digite a data.
+2. Selecione a categoria na lista. Digite o valor em reais na célula ao lado e escreva a descrição no último campo.
+3. As linhas com data, categoria e valor positivo são incluídas automaticamente nos totais. A descrição é opcional.
 
-A demonstração contém dados fictícios. Para usar seus próprios dados, abra uma cópia privada e limpe o conteúdo das linhas da tabela de exemplo, preservando os cabeçalhos.
+Há quatro linhas de preenchimento direto. Use o **Histórico de movimentações** no **Resumo** para outros gastos, receitas, saldo inicial, aportes e resgates. Registre cada movimento uma vez. Se quiser liberar um espaço no Painel, transfira aquela despesa para o histórico como **Despesa** e limpe os campos da linha no Painel.
+
+Em **Lançamentos recentes**, selecione **Do painel** ou **Do histórico** na lista **Origem**. A célula **Página** mostra blocos de quatro registros da origem escolhida, começando pelos últimos inseridos.
+
+## Ler o Resumo
+
+O **Resumo** detalha os totais do período, os gastos por categoria, a reserva mensal e as despesas do mês anterior. A tabela **Histórico de movimentações** começa na linha 24. O atalho no Painel abre a primeira linha da tabela.
+
+- **Mês do painel** filtra os totais de despesas e receitas. Deixe a célula vazia para somar todo o período.
+- **Gastos do mês passado** usa o mês civil anterior à data atual, independente do filtro.
+- **Evolução da reserva** mostra 12 meses. O saldo soma o saldo inicial e os aportes e desconta os resgates.
 
 ## Conferir a demonstração
+
+A planilha publicada contém apenas dados fictícios. Para verificar os cálculos, deixe o filtro vazio ou escolha uma data de setembro de 2026.
 
 | Seleção | Receitas | Despesas | Resultado | Reserva |
 | --- | ---: | ---: | ---: | ---: |
 | Todo o período | R$ 12.800,00 | R$ 2.441,00 | R$ 10.359,00 | R$ 1.950,00 |
 | Setembro de 2026 | R$ 3.200,00 | R$ 320,00 | R$ 2.880,00 | R$ 1.450,00 |
 
-Quando o mês anterior for outubro de 2026, o gráfico à esquerda deve mostrar R$ 437,70 em despesas.
+Quando o mês anterior for outubro de 2026, o gráfico à esquerda mostra R$ 437,70 em despesas lançadas diretamente no Painel.
