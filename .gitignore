@@ -1,0 +1,7 @@
+**/.pbi/
+/dados/*
+!/dados/Lancamentos-exemplo.xlsx
+/privado/
+*.pbix
+*.pbit
+~$*
