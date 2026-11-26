@@ -14,7 +14,15 @@ Baixe a [planilha de exemplo](dados/Lancamentos-exemplo.xlsx) e use **Carregar u
 
 Há quatro linhas de preenchimento direto. Use o **Histórico de movimentações** no **Resumo** para outros gastos, receitas, saldo inicial, aportes e resgates. Registre cada movimento uma vez. Se quiser liberar um espaço no Painel, transfira aquela despesa para o histórico como **Despesa** e limpe os campos da linha no Painel.
 
-Em **Lançamentos recentes**, selecione **Do painel** ou **Do histórico** na lista **Origem**. A célula **Página** mostra blocos de quatro registros da origem escolhida, começando pelos últimos inseridos.
+**Lançamentos recentes** reúne automaticamente os registros do Painel e do histórico, com as datas mais novas primeiro. A célula **Página** mostra quatro registros por vez.
+
+## Enviar e limpar os campos
+
+Em contas do Microsoft 365 com suporte a botões de Office Scripts, a rotina [enviar-despesas.ts](enviar-despesas.ts) transfere as despesas ao histórico, limpa os campos depois de confirmar a gravação e volta à primeira página dos lançamentos recentes.
+
+No Excel Online, abra **Automatizar → Novo Script**, cole o conteúdo da rotina e salve. Em **Associar à pasta de trabalho**, escolha **Adicionar botão à planilha** e dê ao botão o nome **Enviar**. Use somente uma execução por vez.
+
+O Excel Online com conta pessoal não oferece o botão de Office Scripts. Nesse caso, para reaproveitar os campos, copie a despesa para o **Histórico de movimentações** e limpe a linha do Painel depois de conferir a cópia. [Requisitos da Microsoft para botões de script](https://learn.microsoft.com/en-us/office/dev/scripts/develop/script-buttons)
 
 ## Ler o Resumo
 
